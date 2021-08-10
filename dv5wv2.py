@@ -4,9 +4,17 @@ import time
 import yagmail
 from yagmail.sender import SMTP
 
-yag = yagmail.SMTP('teencourtnotifier')
+"""
+    With yagmail, you can register your username and password once in one line of code, from any file.
+    yagmail.register('your username', 'your password')
+    
+    So that you don't have to write pwd directly into code.
+    Aditionally, you can set up envrion variables on your computer to store username and password, so you don't have to add either.
+"""
 
-url = 'https://www.collincountytx.gov/teencourt/Pages/TCCalendar.aspx?visibleDate=9%2f1%2f2021'
+yag = yagmail.SMTP("PASTE SENDER USERNAME HERE)
+
+url = "PASTE URL HERE"
 
 driver = webdriver.Safari()
 driver.get(url)
@@ -30,7 +38,7 @@ while True:
 
     if imdifference.getbbox():
         print("Change.")
-        yag.send('amritg7709@gmail.com', 'New listing', 'Please check or update notifier')
+        yag.send('RECIPIENT FULL EMAIL', 'New change', 'Please check website or update notifier')
     else:
         print("No change")
         
