@@ -8,7 +8,7 @@ from yagmail.sender import SMTP
     With yagmail, you can register your username and password once in one line of code, from any file.
     yagmail.register('your username', 'your password')
     
-    So that you don't have to write pwd directly into code.
+    So that you don't have to write password directly into code.
     Aditionally, you can set up envrion variables on your computer to store username and password, so you don't have to add either.
 """
 
