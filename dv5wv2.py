@@ -1,3 +1,5 @@
+# Created by Amrit Ghosh
+
 from PIL import Image, ImageChops
 from selenium import webdriver
 import time
