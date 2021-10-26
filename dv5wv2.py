@@ -28,19 +28,25 @@ driver.save_screenshot('im1.png')
 
 
 while True:
-    driver.refresh()
-    time.sleep(5)
+    try {
+        driver.refresh()
+        time.sleep(5)
 
-    driver.save_screenshot('im2.png')
+        driver.save_screenshot('im2.png')
 
-    im1 = Image.open('im1.png')
-    im2 = Image.open('im2.png')
+        im1 = Image.open('im1.png')
+        im2 = Image.open('im2.png')
 
-    imdifference = ImageChops.difference(im1, im2)
+        imdifference = ImageChops.difference(im1, im2)
 
-    if imdifference.getbbox():
-        print("Change.")
-        yag.send('RECIPIENT FULL EMAIL', 'New change', 'Please check website or update notifier')
-    else:
-        print("No change")
+        if imdifference.getbbox():
+            print("Change.")
+            yag.send('RECIPIENT FULL EMAIL', 'New change', 'Please check website or update notifier')
+        else:
+            print("No change")
+    } catch {
+        
+    }
+ 
+    
         
